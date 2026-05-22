@@ -7,7 +7,7 @@ export default function ProjectGrid() {
   ];
 
   return (
-    <section className="py-32 px-4 sm:px-8 max-w-7xl mx-auto bg-black">
+    <section className="py-32 px-4 sm:px-8 max-w-7xl mx-auto bg-background">
       <div className="flex justify-between items-end mb-16 border-b border-white/10 pb-8">
         <h2 className="text-3xl md:text-5xl font-serif text-white font-light">Executed Projects</h2>
         <a href="#" className="text-xs tracking-[0.2em] text-gray-500 hover:text-white uppercase transition-colors">View All</a>
@@ -16,7 +16,7 @@ export default function ProjectGrid() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
         {projects.map((project) => (
           <div key={project.id} className="group cursor-pointer">
-            <div className="relative overflow-hidden h-[60vh] md:h-[75vh] mb-8 bg-[#050505]">
+            <div className="relative overflow-hidden h-[60vh] md:h-[75vh] mb-8 bg-secondary">
               <img 
                 src={project.img} 
                 alt={project.name} 

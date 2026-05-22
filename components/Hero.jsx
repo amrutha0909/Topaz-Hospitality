@@ -21,20 +21,20 @@ export default function Hero() {
             alt="Topaz Hospitality" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-[#012c3d]/70"></div>
         </motion.div>
         
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-10 pointer-events-none px-4">
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] font-serif text-white tracking-widest uppercase mb-5 md:mb-6 drop-shadow-[0_4px_18px_rgba(0,0,0,0.6)]"
+            className="text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] font-serif text-gradient tracking-widest uppercase mb-5 md:mb-6 drop-shadow-[0_4px_18px_rgba(0,0,0,0.6)]"
           >
             TOPAZ
           </motion.h1>
-          <motion.p
-            className="text-xs sm:text-sm md:text-lg text-white/85 tracking-[0.16em] md:tracking-[0.3em] uppercase max-w-xs sm:max-w-xl leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)]"
+          <p
+            className="text-[11px] md:text-sm lg:text-base text-white/90 font-bold tracking-[0.2em] md:tracking-[0.4em] uppercase max-w-xs md:max-w-2xl leading-loose md:leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
             We take care of your hospitality needs.
-          </motion.p>
+          </p>
         </div>
       </div>
     </section>

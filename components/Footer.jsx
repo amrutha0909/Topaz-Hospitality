@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] pt-16 md:pt-24 pb-8 border-t border-[#C8AC6B]/20">
+    <footer className="bg-background pt-16 md:pt-24 pb-8">
       <div className="max-w-7xl mx-auto px-5 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 mb-16 md:mb-24">
           <div className="md:col-span-4">
@@ -10,7 +10,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="md:col-span-3">
-            <h4 className="text-[#C8AC6B] text-xs tracking-widest uppercase mb-6 font-serif">Our Offices</h4>
+            <h4 className="text-accent text-xs tracking-widest uppercase mb-6 font-serif">Our Offices</h4>
             <ul className="space-y-4 text-white/60 font-light text-sm">
               <li>Regd. Office: Bhubaneswar, Odisha</li>
               <li>Jalandhar, Punjab</li>
@@ -18,14 +18,14 @@ export default function Footer() {
             </ul>
           </div>
           <div className="md:col-span-2">
-            <h4 className="text-[#C8AC6B] text-xs tracking-widest uppercase mb-6 font-serif">Quick Links</h4>
+            <h4 className="text-accent text-xs tracking-widest uppercase mb-6 font-serif">Quick Links</h4>
             <ul className="space-y-4 text-white/60 font-light text-sm">
               <li><a href="#" className="hover:text-white transition-colors">Portfolio</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
             </ul>
           </div>
           <div className="md:col-span-3">
-            <h4 className="text-[#C8AC6B] text-xs tracking-widest uppercase mb-6 font-serif">Contact</h4>
+            <h4 className="text-accent text-xs tracking-widest uppercase mb-6 font-serif">Contact</h4>
             <ul className="space-y-4 text-white/60 font-light text-sm">
               <li>+91 (0) 123 456 7890</li>
               <li><a href="mailto:office@topazhospitality.com" className="hover:text-white transition-colors">office@topazhospitality.com</a></li>

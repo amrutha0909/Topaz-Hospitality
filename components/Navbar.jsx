@@ -19,11 +19,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-700 ${scrolled || menuOpen ? "bg-[#151515]/95 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent py-5 md:py-8 border-b border-transparent"}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-700 ${scrolled || menuOpen ? "bg-background/95 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent py-5 md:py-8 border-b border-transparent"}`}>
       <div className="max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center">
         <div className="text-2xl font-serif tracking-widest text-white uppercase flex items-center gap-4">
           <a href="#" aria-label="Topaz Hospitality home">
-            <img src="/topaz/logo.png" alt="Topaz Logo" className="h-16 md:h-10 object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)]" />
+            <img src="/topaz/logo.png" alt="Topaz Logo" className="h-28 md:h-24 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] transform origin-left md:scale-125" />
           </a>
         </div>
         <div className="hidden md:flex space-x-12 text-xs tracking-[0.2em] text-gray-400">
@@ -47,7 +47,7 @@ export default function Navbar() {
         </button>
       </div>
       <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="px-5 pt-6 pb-5 space-y-1 bg-[#151515]/95 border-t border-white/10">
+        <div className="px-5 pt-6 pb-5 space-y-1 bg-background/95 border-t border-white/10">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -61,7 +61,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="block pt-5 text-sm tracking-[0.16em] uppercase text-[#C8AC6B]"
+            className="block pt-5 text-sm tracking-[0.16em] uppercase text-accent"
           >
             Reach Us
           </a>

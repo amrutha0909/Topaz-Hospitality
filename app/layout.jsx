@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${cinzel.variable} antialiased bg-[#2e2e2e] text-white`}>
+      <body className={`${inter.variable} ${cinzel.variable} antialiased bg-background text-white`}>
         <LogoIntro />
         <SmoothScroll>
           <Navbar />

@@ -19,18 +19,18 @@ export default function HorizontalGallery() {
   ];
 
   return (
-    <section id="projects" ref={targetRef} className="relative h-[330svh] md:h-[400vh] bg-[#2e2e2e] scroll-mt-24">
+    <section id="projects" ref={targetRef} className="relative h-[330svh] md:h-[400vh] bg-background scroll-mt-24">
       <div className="sticky top-0 h-[100svh] md:h-screen w-full flex flex-col justify-center overflow-hidden py-24 md:py-0">
         <div className="px-5 md:px-24 mb-8 md:mb-16">
           <h2 className="text-gradient text-3xl sm:text-4xl md:text-6xl font-serif">View Our Projects</h2>
         </div>
         <motion.div style={{ x }} className="flex gap-5 md:gap-16 px-5 md:px-24 w-max">
           {projects.map((project, index) => (
-            <div key={index} className="w-[82vw] md:w-[45vw] h-[58svh] md:h-[60vh] shrink-0 relative group cursor-pointer overflow-hidden rounded-lg border border-white/10 bg-[#111111]">
+            <div key={index} className="w-[82vw] md:w-[45vw] h-[58svh] md:h-[60vh] shrink-0 relative group cursor-pointer overflow-hidden rounded-lg border border-white/10 bg-secondary">
               <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-full object-cover grayscale opacity-85 md:opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                className="w-full h-full object-cover opacity-85 md:opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent md:bg-black/20 md:group-hover:bg-black/40 transition-all duration-700"></div>
               <div className="absolute bottom-0 left-0 w-full p-5 md:p-8 flex justify-between items-end">

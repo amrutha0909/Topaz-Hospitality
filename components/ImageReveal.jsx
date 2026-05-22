@@ -12,7 +12,7 @@ export default function ImageReveal({ src, alt }) {
         initial={{ y: "0%" }}
         animate={isInView ? { y: "-100%" } : { y: "0%" }}
         transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
-        className="absolute inset-0 bg-[#0a0a0a] z-10"
+        className="absolute inset-0 bg-background z-10"
       />
       <motion.img
         src={src}

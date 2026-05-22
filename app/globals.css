@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #2e2e2e;
+  --background: #012c3d;
   --foreground: #ffffff;
+  --secondary: #2c788c;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #FFFFFF 0%, #C8AC6B 100%);
+  background: linear-gradient(90deg, #f1924e 0%, #d4af37 50%, #e86b3e 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -52,9 +53,9 @@ body {
   justify-content: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at center, rgba(200, 172, 107, 0.16), transparent 34%),
+    radial-gradient(circle at center, rgba(212, 175, 55, 0.16), transparent 34%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 45%),
-    #101411;
+    #012c3d;
   animation: topaz-intro-release 3.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -64,7 +65,7 @@ body {
   right: 8%;
   top: 50%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200, 172, 107, 0.34), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.34), transparent);
   transform-origin: center;
   animation: topaz-intro-line 2.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

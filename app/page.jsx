@@ -7,7 +7,7 @@ import ContactCTA from "../components/ContactCTA";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#2e2e2e]">
+    <main className="min-h-screen bg-background">
       <Hero />
       <IntroValues />
       <VerticalMarquee />

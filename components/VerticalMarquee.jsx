@@ -15,8 +15,8 @@ export default function VerticalMarquee() {
   const loopImages = [...images, ...images];
 
   return (
-    <section className="bg-[#2e2e2e] py-16 md:py-24 relative overflow-hidden h-[90svh] md:h-[120vh]">
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-[#2e2e2e] via-transparent to-[#2e2e2e]"></div>
+    <section className="bg-background py-16 md:py-24 relative overflow-hidden h-[90svh] md:h-[120vh]">
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-background via-transparent to-background"></div>
       
       {/* Text Overlay in Foreground */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none text-center px-4">
@@ -24,7 +24,7 @@ export default function VerticalMarquee() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-white uppercase tracking-wide mb-6 md:mb-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-gradient uppercase tracking-wide mb-6 md:mb-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
         >
           Types of Projects<br />Undertaken
         </motion.h2>
