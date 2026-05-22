@@ -25,12 +25,12 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="bg-[#2e2e2e] py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16">
-        <h2 className="text-gradient text-4xl md:text-5xl font-serif mb-6">Client Experiences</h2>
+    <section className="bg-[#2e2e2e] py-20 md:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 text-center mb-10 md:mb-16">
+        <h2 className="text-gradient text-3xl sm:text-4xl md:text-5xl font-serif mb-6">Client Experiences</h2>
       </div>
 
-      <div className="w-full relative px-0 md:px-12">
+      <div className="w-full relative px-5 md:px-12">
         <Swiper
           modules={[Navigation, Pagination, EffectCreative]}
           spaceBetween={30}
@@ -51,7 +51,7 @@ export default function Testimonials() {
             <SwiperSlide key={index} className="transition-all duration-500 my-auto">
               {({ isActive }) => (
                 <div 
-                  className={`bg-[#222222] p-12 md:p-16 rounded-2xl transition-transform duration-700 ease-out border border-white/5 ${
+                  className={`bg-[#222222] p-6 sm:p-8 md:p-16 rounded-lg transition-transform duration-700 ease-out border border-white/5 ${
                     isActive ? 'scale-100 opacity-100' : 'scale-90 opacity-40'
                   }`}
                 >
@@ -62,7 +62,7 @@ export default function Testimonials() {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed mb-8 italic">
+                  <p className="text-base md:text-xl text-white/80 font-light leading-relaxed mb-8 italic">
                     "{test.text}"
                   </p>
                   <div>
@@ -107,6 +107,12 @@ export default function Testimonials() {
           background: #C8AC6B !important;
           width: 24px !important;
           border-radius: 4px !important;
+        }
+        @media (max-width: 767px) {
+          .swiper-button-next,
+          .swiper-button-prev {
+            display: none !important;
+          }
         }
       `}</style>
     </section>

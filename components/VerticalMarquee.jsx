@@ -15,7 +15,7 @@ export default function VerticalMarquee() {
   const loopImages = [...images, ...images];
 
   return (
-    <section className="bg-[#2e2e2e] py-24 relative overflow-hidden h-[120vh]">
+    <section className="bg-[#2e2e2e] py-16 md:py-24 relative overflow-hidden h-[90svh] md:h-[120vh]">
       <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-[#2e2e2e] via-transparent to-[#2e2e2e]"></div>
       
       {/* Text Overlay in Foreground */}
@@ -24,7 +24,7 @@ export default function VerticalMarquee() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl lg:text-7xl font-serif text-white uppercase tracking-wider mb-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-white uppercase tracking-wide mb-6 md:mb-8 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
         >
           Types of Projects<br />Undertaken
         </motion.h2>
@@ -33,14 +33,14 @@ export default function VerticalMarquee() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-xs md:text-sm lg:text-base text-white/90 font-bold tracking-[0.2em] uppercase max-w-4xl leading-relaxed drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
+          className="text-[11px] md:text-sm lg:text-base text-white/90 font-bold tracking-[0.12em] md:tracking-[0.2em] uppercase max-w-xs md:max-w-4xl leading-relaxed drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]"
         >
-          Hotels | Motels Restaurants Resorts | Bars | Pubs Industrial<br />
+          Hotels | Motels | Restaurants | Resorts | Bars | Pubs | Industrial<br />
           Catering | Canteens | Clubs
         </motion.p>
       </div>
 
-      <div className="flex justify-center gap-4 md:gap-8 h-[200vh] gallery-marquee -mt-[40vh] opacity-40">
+      <div className="flex justify-center gap-4 md:gap-8 h-[180vh] md:h-[200vh] gallery-marquee -mt-[40vh] opacity-40">
         
         {/* Column 1 (Scrolls Up) */}
         <motion.div 
@@ -49,7 +49,7 @@ export default function VerticalMarquee() {
           className="flex flex-col gap-4 md:gap-8 w-1/3 md:w-1/4"
         >
           {loopImages.map((src, i) => (
-            <div key={`col1-${i}`} className="h-[40vh] w-full rounded-xl overflow-hidden shrink-0">
+            <div key={`col1-${i}`} className="h-[34vh] md:h-[40vh] w-full rounded-lg overflow-hidden shrink-0">
               <img src={src} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Topaz Gallery" />
             </div>
           ))}
@@ -62,7 +62,7 @@ export default function VerticalMarquee() {
           className="flex flex-col gap-4 md:gap-8 w-1/3 md:w-1/4 pt-[10vh]"
         >
           {loopImages.map((src, i) => (
-            <div key={`col2-${i}`} className="h-[50vh] w-full rounded-xl overflow-hidden shrink-0">
+            <div key={`col2-${i}`} className="h-[40vh] md:h-[50vh] w-full rounded-lg overflow-hidden shrink-0">
               <img src={src} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Topaz Gallery" />
             </div>
           ))}
@@ -75,7 +75,7 @@ export default function VerticalMarquee() {
           className="flex flex-col gap-4 md:gap-8 w-1/3 md:w-1/4 pt-[20vh] hidden md:flex"
         >
           {loopImages.map((src, i) => (
-            <div key={`col3-${i}`} className="h-[45vh] w-full rounded-xl overflow-hidden shrink-0">
+            <div key={`col3-${i}`} className="h-[45vh] w-full rounded-lg overflow-hidden shrink-0">
               <img src={src} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" alt="Topaz Gallery" />
             </div>
           ))}

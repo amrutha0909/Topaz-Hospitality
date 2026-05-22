@@ -19,26 +19,26 @@ export default function HorizontalGallery() {
   ];
 
   return (
-    <section ref={targetRef} className="relative h-[400vh] bg-[#2e2e2e]">
-      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-        <div className="px-4 md:px-24 mb-16">
-          <h2 className="text-gradient text-4xl md:text-6xl font-serif">View Our Projects</h2>
+    <section id="projects" ref={targetRef} className="relative h-[330svh] md:h-[400vh] bg-[#2e2e2e] scroll-mt-24">
+      <div className="sticky top-0 h-[100svh] md:h-screen w-full flex flex-col justify-center overflow-hidden py-24 md:py-0">
+        <div className="px-5 md:px-24 mb-8 md:mb-16">
+          <h2 className="text-gradient text-3xl sm:text-4xl md:text-6xl font-serif">View Our Projects</h2>
         </div>
-        <motion.div style={{ x }} className="flex gap-8 md:gap-16 px-4 md:px-24 w-max">
+        <motion.div style={{ x }} className="flex gap-5 md:gap-16 px-5 md:px-24 w-max">
           {projects.map((project, index) => (
-            <div key={index} className="w-[85vw] md:w-[45vw] h-[60vh] shrink-0 relative group cursor-pointer overflow-hidden rounded-lg">
-              <img 
+            <div key={index} className="w-[82vw] md:w-[45vw] h-[58svh] md:h-[60vh] shrink-0 relative group cursor-pointer overflow-hidden rounded-lg border border-white/10 bg-[#111111]">
+              <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
+                className="w-full h-full object-cover grayscale opacity-85 md:opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-700"></div>
-              <div className="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
-                <p className="text-white font-serif text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform translate-y-4 group-hover:translate-y-0">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent md:bg-black/20 md:group-hover:bg-black/40 transition-all duration-700"></div>
+              <div className="absolute bottom-0 left-0 w-full p-5 md:p-8 flex justify-between items-end">
+                <p className="text-white font-serif text-2xl md:text-3xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 transform md:translate-y-4 md:group-hover:translate-y-0">
                   {project.title}
                 </p>
-                <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">
-                  <span className="transform -rotate-45">&rarr;</span>
+                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full border border-white/30 flex items-center justify-center text-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-700 delay-100">
+                  <span className="transform -rotate-45">&#8594;</span>
                 </div>
               </div>
             </div>

@@ -13,8 +13,8 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative h-[150vh]">
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
+    <section ref={containerRef} className="relative h-[110svh] md:h-[150vh]">
+      <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <motion.div style={{ y, opacity }} className="absolute inset-0">
           <img 
             src="/topaz/hero.jpg" 
@@ -26,18 +26,12 @@ export default function Hero() {
         
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-10 pointer-events-none px-4">
           <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="text-5xl md:text-8xl lg:text-[10rem] font-serif text-white tracking-widest uppercase mb-6"
+            className="text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] font-serif text-white tracking-widest uppercase mb-5 md:mb-6 drop-shadow-[0_4px_18px_rgba(0,0,0,0.6)]"
           >
             TOPAZ
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-            className="text-sm md:text-lg text-white/80 tracking-[0.3em] uppercase max-w-xl"
+            className="text-xs sm:text-sm md:text-lg text-white/85 tracking-[0.16em] md:tracking-[0.3em] uppercase max-w-xs sm:max-w-xl leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)]"
           >
             We take care of your hospitality needs.
           </motion.p>

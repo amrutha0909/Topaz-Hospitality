@@ -3,6 +3,7 @@ import "./globals.css";
 import SmoothScroll from "../components/SmoothScroll";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LogoIntro from "../components/LogoIntro";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-cinzel" });
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${cinzel.variable} antialiased bg-[#2e2e2e] text-white`}>
+        <LogoIntro />
         <SmoothScroll>
           <Navbar />
           {children}

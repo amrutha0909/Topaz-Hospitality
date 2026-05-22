@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] pt-24 pb-8 border-t border-[#C8AC6B]/20">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-24">
+    <footer className="bg-[#111111] pt-16 md:pt-24 pb-8 border-t border-[#C8AC6B]/20">
+      <div className="max-w-7xl mx-auto px-5 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 mb-16 md:mb-24">
           <div className="md:col-span-4">
-            <img src="/topaz/logo.png" alt="Topaz Logo" className="h-10 object-contain invert brightness-0 mb-8" />
+            <img src="/topaz/logo.png" alt="Topaz Logo" className="h-14 md:h-10 object-contain mb-6 md:mb-8" />
             <p className="text-white/60 font-light text-sm leading-relaxed max-w-xs">
               Topaz works with a select number of clients each year across custom construction, renovation, and management throughout India and beyond.
             </p>
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-white/40 tracking-widest uppercase">
+        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4 pt-8 border-t border-white/10 text-xs text-white/40 tracking-widest uppercase">
           <p>&copy; {new Date().getFullYear()} Topaz Hospitality. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Client Login</a>
