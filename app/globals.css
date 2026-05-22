@@ -3,32 +3,42 @@
 @tailwind utilities;
 
 :root {
-  --background: #050505;
-  --foreground: #fcfcfc;
+  --background: #2e2e2e;
+  --foreground: #ffffff;
 }
 
 body {
-  background-color: var(--background);
   color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
 
-/* Custom Utilities for Luxury Vibe */
-.text-balance {
-  text-wrap: balance;
+.font-serif {
+  font-family: var(--font-cinzel), serif;
 }
 
-.luxury-gradient {
-  background: linear-gradient(135deg, #111 0%, #000 100%);
+.text-gradient {
+  background: linear-gradient(90deg, #FFFFFF 0%, #C8AC6B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
+.gallery-marquee {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
 }

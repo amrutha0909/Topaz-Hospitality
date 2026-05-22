@@ -1,38 +1,42 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#050505] pt-32 pb-12 border-t border-white/5">
+    <footer className="bg-[#111111] pt-24 pb-8 border-t border-[#C8AC6B]/20">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
-          <div className="col-span-1 md:col-span-2">
-            <h2 className="text-3xl md:text-4xl font-serif tracking-widest text-white uppercase mb-8">TOPAZ HOSPITALITY</h2>
-            <p className="text-gray-500 max-w-sm font-light leading-relaxed tracking-wide">
-              A full-fledged hospitality solutions firm providing end to end solutions in conceptualisation, facility planning, and operations. We take care of your hospitality needs.
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 mb-24">
+          <div className="md:col-span-4">
+            <img src="/topaz/logo.png" alt="Topaz Logo" className="h-10 object-contain invert brightness-0 mb-8" />
+            <p className="text-white/60 font-light text-sm leading-relaxed max-w-xs">
+              Topaz works with a select number of clients each year across custom construction, renovation, and management throughout India and beyond.
             </p>
           </div>
-          <div>
-            <h4 className="text-white text-xs tracking-[0.2em] uppercase mb-8">Offices</h4>
-            <ul className="space-y-5 text-gray-500 font-light text-sm tracking-wide">
+          <div className="md:col-span-3">
+            <h4 className="text-[#C8AC6B] text-xs tracking-widest uppercase mb-6 font-serif">Our Offices</h4>
+            <ul className="space-y-4 text-white/60 font-light text-sm">
               <li>Regd. Office: Bhubaneswar, Odisha</li>
               <li>Jalandhar, Punjab</li>
               <li>Gandhi Nagar, Jammu</li>
             </ul>
           </div>
-          <div>
-            <h4 className="text-white text-xs tracking-[0.2em] uppercase mb-8">Services</h4>
-            <ul className="space-y-5 text-gray-500 font-light text-sm tracking-wide">
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Project Management</a></li>
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Facility Planning</a></li>
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Brand Collaboration</a></li>
-              <li><a href="#" className="hover:text-white transition-colors duration-300">Marketing Services</a></li>
+          <div className="md:col-span-2">
+            <h4 className="text-[#C8AC6B] text-xs tracking-widest uppercase mb-6 font-serif">Quick Links</h4>
+            <ul className="space-y-4 text-white/60 font-light text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Portfolio</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
+            </ul>
+          </div>
+          <div className="md:col-span-3">
+            <h4 className="text-[#C8AC6B] text-xs tracking-widest uppercase mb-6 font-serif">Contact</h4>
+            <ul className="space-y-4 text-white/60 font-light text-sm">
+              <li>+91 (0) 123 456 7890</li>
+              <li><a href="mailto:office@topazhospitality.com" className="hover:text-white transition-colors">office@topazhospitality.com</a></li>
             </ul>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-[10px] text-gray-600 tracking-[0.3em] uppercase">
-          <p>&copy; {new Date().getFullYear()} TOPAZ HOSPITALITY & DEVELOPMENT SERVICES PVT. LTD. ALL RIGHTS RESERVED.</p>
-          <div className="flex space-x-8 mt-6 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors duration-300">PRIVACY</a>
-            <a href="#" className="hover:text-white transition-colors duration-300">TERMS</a>
-            <a href="#" className="hover:text-white transition-colors duration-300">CONTACT</a>
+        
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-xs text-white/40 tracking-widest uppercase">
+          <p>&copy; {new Date().getFullYear()} Topaz Hospitality. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-white transition-colors">Client Login</a>
           </div>
         </div>
       </div>
