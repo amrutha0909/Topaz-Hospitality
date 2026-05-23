@@ -1,15 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
-    { label: "Services", href: "#services" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/how-we-work" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Contact", href: "/contact" },
   ];
 
   useEffect(() => {
@@ -22,20 +26,24 @@ export default function Navbar() {
     <nav className={`fixed w-full z-50 transition-all duration-700 ${scrolled || menuOpen ? "bg-background/95 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent py-5 md:py-8 border-b border-transparent"}`}>
       <div className="max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center">
         <div className="text-2xl font-serif tracking-widest text-white uppercase flex items-center gap-4">
-          <a href="#" aria-label="Topaz Hospitality home">
+          <Link href="/" aria-label="Topaz Hospitality home">
             <img src="/topaz/logo.png" alt="Topaz Logo" className="h-28 md:h-24 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] transform origin-left md:scale-125" />
-          </a>
+          </Link>
         </div>
         <div className="hidden md:flex space-x-12 text-xs tracking-[0.2em] text-gray-400">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="hover:text-white transition-colors duration-300">
-              {item.label.toUpperCase()}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link key={item.href} href={item.href} className={`group relative transition-colors duration-300 ${isActive ? "text-white" : "hover:text-turquoise-light"}`}>
+                <span className={`absolute -left-3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-orange-mid transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}></span>
+                {item.label.toUpperCase()}
+              </Link>
+            );
+          })}
         </div>
-        <a href="#contact" className="text-white hidden md:block border-b border-transparent hover:border-white transition-colors duration-300 pb-1 text-xs tracking-[0.2em]">
+        <Link href="/contact" className="text-white hidden md:block border-b border-transparent hover:border-white transition-colors duration-300 pb-1 text-xs tracking-[0.2em]">
           REACH US
-        </a>
+        </Link>
         <button
           type="button"
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
@@ -48,23 +56,20 @@ export default function Navbar() {
       </div>
       <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}>
         <div className="px-5 pt-6 pb-5 space-y-1 bg-background/95 border-t border-white/10">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className="block py-4 text-sm tracking-[0.16em] uppercase text-white/80 border-b border-white/10"
-            >
-              {item.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="block pt-5 text-sm tracking-[0.16em] uppercase text-accent"
-          >
-            Reach Us
-          </a>
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className={`block py-4 text-sm tracking-[0.16em] uppercase border-b border-white/10 group relative ${isActive ? "text-white" : "text-white/80 hover:text-turquoise-light transition-colors"}`}
+              >
+                <span className={`inline-block mr-2 w-1.5 h-1.5 rounded-full bg-orange-mid transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}></span>
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>

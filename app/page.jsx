@@ -3,7 +3,6 @@ import IntroValues from "../components/IntroValues";
 import HorizontalGallery from "../components/HorizontalGallery";
 import VerticalMarquee from "../components/VerticalMarquee";
 import Testimonials from "../components/Testimonials";
-import ContactCTA from "../components/ContactCTA";
 
 export default function Home() {
   return (
@@ -13,7 +12,6 @@ export default function Home() {
       <VerticalMarquee />
       <HorizontalGallery />
       <Testimonials />
-      <ContactCTA />
     </main>
   );
 }
