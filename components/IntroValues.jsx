@@ -37,15 +37,7 @@ export default function IntroValues() {
         >
           Custom project management, facility planning, and operations, crafted with the care that true hospitality deserves.
         </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-sm md:text-base text-white/60 font-light leading-relaxed mt-6 md:mt-8 max-w-3xl mx-auto"
-        >
-          TOPAZ HOSPITALITY SOLUTIONS came into existence in 2008 with a single standard: provide end-to-end solutions worth remembering. From ground-up custom construction to operations management, everything we do is guided by a genuine commitment to craft, transparency, and lasting relationships.
-        </motion.p>
+
       </div>
 
       <section ref={containerRef} className="h-[285svh] md:h-[300vh] w-full">
