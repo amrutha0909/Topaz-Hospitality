@@ -12,7 +12,7 @@ export default function ContactCTA() {
           If you’re planning a custom hospitality project, facility overhaul, or operational restructuring, we’d like to hear about it.
         </p>
         
-        <form className="max-w-3xl mx-auto space-y-7 md:space-y-8 text-left bg-orange-dark p-8 md:p-14 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative overflow-hidden backdrop-blur-sm">
+        <form className="max-w-3xl mx-auto space-y-7 md:space-y-8 text-left bg-orange-mid p-8 md:p-14 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 relative overflow-hidden backdrop-blur-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-8">
             <div>
               <label className="block text-xs tracking-widest text-[#012c3d]/70 uppercase mb-2">First Name</label>
