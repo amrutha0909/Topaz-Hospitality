@@ -65,7 +65,7 @@ export default function AboutPage() {
           <p className="text-white/60 font-light text-lg max-w-2xl mx-auto mb-10">
             Our modular service framework is divided into specific phases, from pre-development facility planning to final operational launch and management contracts.
           </p>
-          <Link href="/how-we-work" className="inline-block border border-accent text-accent px-10 py-4 tracking-[0.2em] text-sm uppercase hover:bg-accent hover:text-[#012c3d] transition-all duration-300">
+          <Link href="/how-we-work" className="inline-block border border-accent text-accent px-10 py-4 tracking-[0.2em] text-sm uppercase hover:bg-accent hover:text-[#0C0C0C] transition-all duration-300">
             Explore Our Methodology
           </Link>
         </div>

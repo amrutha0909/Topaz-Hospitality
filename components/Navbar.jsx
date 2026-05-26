@@ -23,19 +23,35 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-700 ${scrolled || menuOpen ? "bg-background/95 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent py-5 md:py-8 border-b border-transparent"}`}>
-      <div className="max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center">
-        <div className="text-2xl font-serif tracking-widest text-white uppercase flex items-center gap-4">
-          <Link href="/" aria-label="Topaz Hospitality home">
-            <img src="/topaz/logo.png" alt="Topaz Logo" className="h-28 md:h-24 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.45)] transform origin-left md:scale-125" />
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled || menuOpen ? "bg-background/95 backdrop-blur-md py-2 border-b border-white/5" : "bg-transparent py-5 md:py-8 border-b border-transparent"}`}>
+      <div className="max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center w-full">
+        <div className="flex items-center select-none">
+          <Link href="/" aria-label="Topaz Hospitality home" className="block">
+            <div 
+              className={`overflow-hidden transition-all duration-500 flex justify-center items-start ${
+                scrolled 
+                  ? "h-11 w-11 md:h-12 md:w-12" 
+                  : "h-20 w-24 md:h-24 md:w-28"
+              }`}
+            >
+              <img 
+                src="/topaz/logo.png" 
+                alt="Topaz Logo" 
+                className={`w-full h-auto object-contain transition-all duration-500 transform origin-top ${
+                  scrolled 
+                    ? "-translate-y-1 scale-95" 
+                    : "scale-100"
+                }`} 
+              />
+            </div>
           </Link>
         </div>
         <div className="hidden md:flex space-x-12 text-xs tracking-[0.2em] text-gray-400">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
-              <Link key={item.href} href={item.href} className={`group relative transition-colors duration-300 ${isActive ? "text-white" : "hover:text-turquoise-light"}`}>
-                <span className={`absolute -left-3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-orange-mid transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}></span>
+              <Link key={item.href} href={item.href} className={`group relative transition-colors duration-300 ${isActive ? "text-white" : "hover:text-accent"}`}>
+                <span className={`absolute -left-3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-accent transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}></span>
                 {item.label.toUpperCase()}
               </Link>
             );
@@ -63,9 +79,9 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className={`block py-4 text-sm tracking-[0.16em] uppercase border-b border-white/10 group relative ${isActive ? "text-white" : "text-white/80 hover:text-turquoise-light transition-colors"}`}
+                className={`block py-4 text-sm tracking-[0.16em] uppercase border-b border-white/10 group relative ${isActive ? "text-white" : "text-white/80 hover:text-accent transition-colors"}`}
               >
-                <span className={`inline-block mr-2 w-1.5 h-1.5 rounded-full bg-orange-mid transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}></span>
+                <span className={`inline-block mr-2 w-1.5 h-1.5 rounded-full bg-accent transition-opacity duration-300 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}></span>
                 {item.label}
               </Link>
             );

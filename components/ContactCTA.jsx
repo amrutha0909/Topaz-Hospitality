@@ -32,7 +32,7 @@ export default function ContactCTA() {
             <textarea rows="4" className="w-full bg-transparent border-b border-white/20 pb-2 text-white placeholder-white/40 focus:outline-none focus:border-accent transition-colors resize-none"></textarea>
           </div>
           <div className="pt-8 text-center">
-            <button type="button" className="w-full sm:w-auto bg-accent text-[#012c3d] font-serif px-12 py-4 hover:bg-[#012c3d] hover:text-accent transition-colors duration-300 shadow-xl">
+            <button type="button" className="w-full sm:w-auto bg-accent text-[#0C0C0C] font-serif px-12 py-4 hover:bg-[#0C0C0C] hover:text-accent transition-colors duration-300 shadow-xl">
               Submit Inquiry
             </button>
           </div>

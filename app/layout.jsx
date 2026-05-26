@@ -1,12 +1,13 @@
-import { Inter, Cinzel } from "next/font/google";
+import { Work_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "../components/SmoothScroll";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LogoIntro from "../components/LogoIntro";
+import CustomCursor from "../components/CustomCursor";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const cinzel = Cinzel({ subsets: ["latin"], variable: "--font-cinzel" });
+const workSans = Work_Sans({ subsets: ["latin"], variable: "--font-sans" });
+const workSansHeading = Work_Sans({ subsets: ["latin"], variable: "--font-heading" });
 
 export const metadata = {
   title: "Topaz Hospitality | Solutions",
@@ -16,7 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${cinzel.variable} antialiased bg-background text-white`}>
+      <body className={`${workSans.variable} ${workSansHeading.variable} antialiased bg-background text-white`}>
+        <div className="noise" aria-hidden="true" />
+        <CustomCursor />
         <LogoIntro />
         <SmoothScroll>
           <Navbar />

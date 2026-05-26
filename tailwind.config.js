@@ -12,18 +12,18 @@ module.exports = {
         accent: "#d4af37",
         secondary: "var(--secondary)",
         turquoise: {
-          dark: "#012c3d",
-          light: "#2c788c"
+          dark: "#0C0C0C",
+          light: "#1C1C1C"
         },
         orange: {
-          dark: "#d8532e",
-          mid: "#e86b3e",
-          light: "#e86b3e"
+          dark: "#9a7b1c",
+          mid: "#141414",
+          light: "#fcd34d"
         }
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        serif: ['var(--font-playfair)'],
+        sans: ['var(--font-sans)', 'sans-serif'],
+        serif: ['var(--font-heading)', 'sans-serif'],
       }
     },
   },

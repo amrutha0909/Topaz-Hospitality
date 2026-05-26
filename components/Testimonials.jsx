@@ -38,7 +38,7 @@ export default function Testimonials() {
           spaceBetween={30}
           slidesPerView={1}
           centeredSlides={true}
-          loop={true}
+          loop={false}
           navigation
           pagination={{ clickable: true }}
           breakpoints={{
@@ -113,7 +113,19 @@ export default function Testimonials() {
         @media (max-width: 767px) {
           .swiper-button-next,
           .swiper-button-prev {
-            display: none !important;
+            width: 35px !important;
+            height: 35px !important;
+            background: rgba(255, 255, 255, 0.15) !important;
+          }
+          .swiper-button-next:after,
+          .swiper-button-prev:after {
+            font-size: 14px !important;
+          }
+          .swiper-button-next {
+            right: 8px !important;
+          }
+          .swiper-button-prev {
+            left: 8px !important;
           }
         }
       `}</style>

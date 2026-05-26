@@ -3,28 +3,72 @@
 @tailwind utilities;
 
 :root {
-  --background: #012c3d;
-  --foreground: #ffffff;
-  --secondary: #2c788c;
+  --background: #0C0C0C;
+  --foreground: #FAFAFA;
+  --secondary: #141414;
+  --gold: #d4af37;
+  --gold-light: #fcd34d;
+  --gold-dark: #9a7b1c;
+  --charcoal: #1C1C1C;
+  --white: #FAFAFA;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) var(--background);
+}
+
+/* Custom Scrollbar - Webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--background);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-sans), sans-serif;
   overflow-x: hidden;
 }
 
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+}
+
 .font-serif {
-  font-family: var(--font-cinzel), serif;
+  font-family: var(--font-heading), sans-serif;
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #e86b3e 0%, #d4af37 50%, #e86b3e 100%);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  /* Prevent background-clip from cutting off descenders like y, g, j */
+  padding-bottom: 0.12em;
+  margin-bottom: 0.15em;
+  display: inline-block;
 }
 
 .gallery-marquee {
@@ -53,9 +97,9 @@ body {
   justify-content: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at center, rgba(212, 175, 55, 0.16), transparent 34%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 45%),
-    #012c3d;
+    radial-gradient(circle at center, rgba(191, 161, 129, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 45%),
+    #0C0C0C;
   animation: topaz-intro-release 3.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -65,7 +109,7 @@ body {
   right: 8%;
   top: 50%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.34), transparent);
+  background: linear-gradient(90deg, transparent, rgba(191, 161, 129, 0.34), transparent);
   transform-origin: center;
   animation: topaz-intro-line 2.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
@@ -81,7 +125,7 @@ body {
   position: absolute;
   width: 50%;
   height: 50%;
-  background-image: url("/topaz/logo.png");
+  background-image: url("/topaz/logo-full.png");
   background-repeat: no-repeat;
   background-size: 200% 200%;
   filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.38));
@@ -179,4 +223,51 @@ body {
   .topaz-intro-piece {
     animation-duration: 0.8s;
   }
+}
+
+/* ============================================
+   CUSTOM CURSOR (OPTINEX STYLING)
+   ============================================ */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000000;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.2s ease;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000001;
+  transform: translate(-50%, -50%);
+}
+
+.cursor.hover {
+  transform: translate(-50%, -50%) scale(2.5);
+  background: rgba(191, 161, 129, 0.15);
+}
+
+/* ============================================
+   NOISE TEXTURE OVERLAY (OPTINEX STYLING)
+   ============================================ */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }

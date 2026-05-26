@@ -115,7 +115,7 @@ export default function OldPortfolioPage() {
           <p className="text-white/60 font-light text-lg mb-12">
             Reach out to our team to discuss how we can bring your hospitality vision to life with uncompromising quality.
           </p>
-          <a href="/contact" className="inline-block border border-accent text-accent px-12 py-4 tracking-[0.2em] text-sm uppercase hover:bg-accent hover:text-[#012c3d] transition-all duration-300">
+          <a href="/contact" className="inline-block border border-accent text-accent px-12 py-4 tracking-[0.2em] text-sm uppercase hover:bg-accent hover:text-[#0C0C0C] transition-all duration-300">
             Contact Us
           </a>
         </div>

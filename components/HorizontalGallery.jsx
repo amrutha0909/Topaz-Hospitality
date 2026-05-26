@@ -2,13 +2,25 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import { useState, useEffect } from "react";
+
 export default function HorizontalGallery() {
+  const [isMobile, setIsMobile] = useState(false);
   const targetRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", isMobile ? "-78%" : "-56%"]);
 
   const projects = [
     { title: "Karnal Palace", img: "/topaz/gallery-1.jpg" },

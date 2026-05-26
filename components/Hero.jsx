@@ -21,7 +21,7 @@ export default function Hero() {
             alt="Topaz Hospitality" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#012c3d]/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1C1814]/85 via-[#0C0C0C]/80 to-[#0C0C0C]"></div>
         </motion.div>
         
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-10 pointer-events-none px-4">
