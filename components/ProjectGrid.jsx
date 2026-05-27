@@ -1,9 +1,9 @@
 export default function ProjectGrid() {
   const projects = [
-    { id: 1, name: "Luxury Palace Hotel, Karnal", desc: "5-Star Category", img: "/topaz/gallery-1.jpg" },
-    { id: 2, name: "Imperium Resort, Hisar", desc: "Luxurious Resort", img: "/topaz/project-2.jpg" },
-    { id: 3, name: "Hotel 17 Miles, Jammu", desc: "4-Star Hotel", img: "/topaz/project-1.jpg" },
-    { id: 4, name: "Heritage Palace, Banaras", desc: "Heritage Property at Assighat", img: "/topaz/reveal.jpg" },
+    { id: 1, name: "Noormahal Palace Hotel, Karnal", desc: "5-Star Category", img: "/topaz/gallery-1.jpg" },
+    { id: 2, name: "Imperium Resort, Hisar", desc: "Luxurious City Resort", img: "/topaz/project-2.jpg" },
+    { id: 3, name: "Hotel 17 Miles, Jammu", desc: "4-Star Category Hotel", img: "/topaz/project-1.jpg" },
+    { id: 4, name: "Palace on Ganges, Banaras", desc: "Heritage Palace Hotel at Assighat", img: "/topaz/reveal.jpg" },
   ];
 
   return (

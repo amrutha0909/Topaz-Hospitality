@@ -9,19 +9,28 @@ import 'swiper/css/pagination';
 export default function Testimonials() {
   const testimonials = [
     {
-      author: "David G.",
-      text: "Topaz Hospitality performed an A+ job in all aspects of our resort development. They won the bid against the highest-end competitors due to their thoughtful and detailed planning. Their collaboration with architects and designers was seamless.",
-      project: "Imperium Resort"
+      author: "Amit Sharma",
+      text: "An absolute royal masterpiece in Karnal. The Rajputana and Mughal architectural execution is incredibly detailed. The hospitality and service levels are outstanding, making you feel like royalty from the moment you enter.",
+      project: "Noormahal Palace Hotel",
+      rating: 5.0
     },
     {
-      author: "Katherine R.",
-      text: "Topaz has worked with me on two major properties. Their understanding of complex hospitality requirements and their ability to work with the proposed plans allowed for much faster project completion. The results are unsurpassed.",
-      project: "Karnal Palace"
+      author: "Rajat K.",
+      text: "Outstanding facility planning and design. The rooms are clean and spacious, the food quality is supreme, and the hospitality staff is highly cooperative. Excellent venue for conferences and corporate stays in Jammu.",
+      project: "Viraj Sarovar Portico",
+      rating: 4.8
     },
     {
-      author: "Sharon M.",
-      text: "From the early days of budget and timeframe discussion to the finished project, everything went smoothly, professionally, and timely. We recommend Topaz Hospitality whole-heartedly for any development needs.",
-      project: "Sagaponack Splendor"
+      author: "Priyanka Thakur",
+      text: "A beautiful premium property with exceptional banquet facilities. The landscape design, spacious event halls, and catering execution are superb. The staff coordination is flawless and highly professional.",
+      project: "17 Miles Jammu",
+      rating: 4.7
+    },
+    {
+      author: "Sourav Mohanty",
+      text: "Highly convenient location at Rasulgarh Square. The service is incredibly warm and hospitable, and the room layout is highly practical. A very reliable and comfortable stay in Bhubaneswar!",
+      project: "Hotel Urmee",
+      rating: 4.5
     }
   ];
 
@@ -57,17 +66,52 @@ export default function Testimonials() {
                     isActive ? 'scale-100 opacity-100' : 'scale-90 opacity-40'
                   }`}
                 >
-                  <div className="text-gold-500 mb-6 flex gap-1">
-                    {[1,2,3,4,5].map(star => (
-                      <svg key={star} className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  <div className="flex items-center justify-between mb-6 flex-wrap gap-4 border-b border-white/5 pb-5">
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex gap-0.5">
+                        {[1, 2, 3, 4, 5].map((star) => {
+                          const isFull = test.rating >= star;
+                          const isHalf = !isFull && test.rating > star - 1;
+                          return (
+                            <svg 
+                              key={star} 
+                              className={`w-5 h-5 ${isFull || isHalf ? 'text-accent' : 'text-white/10'}`} 
+                              fill="currentColor" 
+                              viewBox="0 0 20 20"
+                            >
+                              {isHalf ? (
+                                <>
+                                  <defs>
+                                    <linearGradient id={`grad-${index}-${star}`}>
+                                      <stop offset="70%" stopColor="#d4af37" />
+                                      <stop offset="30%" stopColor="rgba(255,255,255,0.1)" />
+                                    </linearGradient>
+                                  </defs>
+                                  <path fill={`url(#grad-${index}-${star})`} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </>
+                              ) : (
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                              )}
+                            </svg>
+                          );
+                        })}
+                      </div>
+                      <span className="text-accent font-mono text-xs font-semibold tracking-wider bg-accent/10 px-2 py-0.5 rounded border border-accent/20">
+                        {test.rating.toFixed(1)} / 5
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-[10px] text-white/60 tracking-wider font-light uppercase">
+                      <svg className="w-3 h-3 fill-current text-accent" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-6.887 4.114-4.62 0-8.382-3.762-8.382-8.382S7.62 1.75 12.24 1.75c2.03 0 3.887.77 5.316 2.03l3.07-3.07C18.23-1.214 15.424-2 12.24-2c-6.85 0-12.4 5.55-12.4 12.4s5.55 12.4 12.4 12.4c7.152 0 11.89-5.03 11.89-12.115 0-.819-.08-1.4-.24-2.4H12.24z"/>
                       </svg>
-                    ))}
+                      Google Review
+                    </div>
                   </div>
-                  <p className="text-base md:text-xl text-white/80 font-light leading-relaxed mb-8 italic">
+                  <p className="text-base md:text-lg text-white/80 font-light leading-relaxed mb-8 italic min-h-[100px]">
                     "{test.text}"
                   </p>
-                  <div>
+                  <div className="border-t border-white/5 pt-5">
                     <h4 className="font-serif text-accent text-xl">{test.author}</h4>
                     <p className="text-xs tracking-widest text-white/40 uppercase mt-2">{test.project}</p>
                   </div>

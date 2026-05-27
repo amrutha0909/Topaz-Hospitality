@@ -16,7 +16,7 @@ export default function IntroValues() {
       title: "Execution",
       num: "02",
       desc: "Every project we undertake is approached with the understanding that what we build will outlast the building process, which makes the details non-negotiable.",
-      img: "/topaz/reveal.jpg",
+      img: "/topaz/hero.jpg",
     },
     {
       title: "Management",
@@ -61,7 +61,7 @@ export default function IntroValues() {
               onMouseEnter={() => setHoveredIndex(idx)}
               onClick={() => setHoveredIndex(idx)}
               className={`relative h-full rounded-xl overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] border border-white/5 ${
-                isExpanded ? "flex-[3] md:flex-[2.5] border-accent/20" : "flex-[1]"
+                isExpanded ? "flex-[2.5] md:flex-[2.8] border-accent/20" : "flex-[1]"
               }`}
             >
               {/* Background Image with Reveal Zoom */}
@@ -82,7 +82,11 @@ export default function IntroValues() {
               </div>
 
               {/* Card Contents */}
-              <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-between z-10 select-none">
+              <div
+                className={`absolute inset-0 flex flex-col justify-between z-10 select-none transition-all duration-500 ${
+                  isExpanded ? "p-6 md:p-10" : "p-4 py-5 md:px-6 md:py-10"
+                }`}
+              >
                 {/* Header Row */}
                 <div className="flex justify-between items-start">
                   <span className="font-serif text-accent text-lg tracking-widest">{val.num}</span>
@@ -95,10 +99,11 @@ export default function IntroValues() {
                 {/* Footer Section */}
                 <div className="max-w-xl">
                   <h3
-                    className="text-gradient text-3xl sm:text-4xl md:text-5xl font-serif mb-4 transition-all duration-500"
-                    style={{
-                      transform: isExpanded ? "translateY(0)" : "translateY(10px)",
-                    }}
+                    className={`text-gradient font-serif transition-all duration-500 ${
+                      isExpanded
+                        ? "text-3xl sm:text-4xl md:text-5xl mb-4"
+                        : "text-xl sm:text-2xl mb-0"
+                    }`}
                   >
                     {val.title}
                   </h3>
