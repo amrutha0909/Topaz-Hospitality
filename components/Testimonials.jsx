@@ -83,7 +83,7 @@ export default function Testimonials() {
                                 <>
                                   <defs>
                                     <linearGradient id={`grad-${index}-${star}`}>
-                                      <stop offset="70%" stopColor="#d4af37" />
+                                      <stop offset="70%" stopColor="#c99b41" />
                                       <stop offset="30%" stopColor="rgba(255,255,255,0.1)" />
                                     </linearGradient>
                                   </defs>
@@ -150,7 +150,7 @@ export default function Testimonials() {
           transition: all 0.3s ease;
         }
         .swiper-pagination-bullet-active {
-          background: #d4af37 !important;
+          background: #c99b41 !important;
           width: 24px !important;
           border-radius: 4px !important;
         }

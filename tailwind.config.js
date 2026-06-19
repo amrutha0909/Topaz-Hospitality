@@ -9,16 +9,16 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        accent: "#d4af37",
+        accent: "#c99b41",
         secondary: "var(--secondary)",
         turquoise: {
           dark: "#0C0C0C",
           light: "#1C1C1C"
         },
         orange: {
-          dark: "#9a7b1c",
+          dark: "#b57f2e",
           mid: "#141414",
-          light: "#fcd34d"
+          light: "#e3c26a"
         }
       },
       fontFamily: {
