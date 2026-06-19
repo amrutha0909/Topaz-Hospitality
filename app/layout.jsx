@@ -1,4 +1,5 @@
-import { Work_Sans, Syne } from "next/font/google";
+import { Work_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "../components/SmoothScroll";
 import Navbar from "../components/Navbar";
@@ -7,7 +8,10 @@ import LogoIntro from "../components/LogoIntro";
 import CustomCursor from "../components/CustomCursor";
 
 const workSans = Work_Sans({ subsets: ["latin"], variable: "--font-sans" });
-const workSansHeading = Work_Sans({ subsets: ["latin"], variable: "--font-heading" });
+const transcity = localFont({
+  src: "./fonts/Transcity.otf",
+  variable: "--font-heading",
+});
 
 export const metadata = {
   title: "Topaz Hospitality | Solutions",
@@ -17,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${workSans.variable} ${workSansHeading.variable} antialiased bg-background text-white`}>
+      <body className={`${workSans.variable} ${transcity.variable} antialiased bg-background text-white`}>
         <div className="noise" aria-hidden="true" />
         <CustomCursor />
         <LogoIntro />
